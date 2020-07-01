@@ -10,7 +10,13 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+  mounted () {
+    this.$store.dispatch('setTest', 9).then(() => {
+      console.log(this.$store.state.book.test)
+    })
+  }
+}
 document.addEventListener('DOMContentLoaded', () => {
   const html = document.querySelector('html')
   let fontSize = window.innerWidth / 10
