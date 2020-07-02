@@ -3,17 +3,24 @@
     <div id="nav">
       <p class="text">abcd</p>
       <p>abcd</p>
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>
+      |
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  computed: {
+    ...mapGetters(['test'])
+  },
   mounted () {
     this.$store.dispatch('setTest', 9).then(() => {
-      console.log(this.$store.state.book.test)
+      console.log(this.test)
+        console.log(mapGetters(['test']))
     })
   }
 }
@@ -26,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 <style lang="scss" scoped>
   @import "./assets/styles/global";
+
   .text {
     font-family: 'Days One';
     font-size: px2rem(20);
