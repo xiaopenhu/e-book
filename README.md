@@ -48,6 +48,6 @@ npm i -g @vue/devtools
 ```
 启动命令
 ```
-vuedevtools
+vue-devtools
 ```
 之后把js引入index.html,生产环境下要注释掉
