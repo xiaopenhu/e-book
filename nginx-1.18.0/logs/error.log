@@ -1,0 +1,18 @@
+2020/07/06 17:34:08 [error] 13824#13864: *1 CreateFile() "E:\webcode\nginx-1.18.0/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/07/06 17:36:26 [notice] 13968#14040: signal process started
+2020/07/06 17:40:17 [error] 13764#13484: *1 CreateFile() "E:\webcode\nginx-1.18.0/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/"
+2020/07/06 18:02:42 [notice] 12200#13736: signal process started
+2020/07/06 18:02:55 [error] 12492#15008: *4 CreateFile() "E:\webcode\e-book-resouce/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: resouce, request: "GET /favicon.ico HTTP/1.1", host: "localhost:9000", referrer: "http://localhost:9000/"
+2020/07/06 18:05:34 [alert] 13952#11440: worker process 14680 exited with code C0000142
+2020/07/06 18:05:34 [alert] 13952#11440: could not respawn worker
+2020/07/07 12:03:02 [emerg] 9536#9540: unexpected "}" in E:\webcode\e-book\nginx-1.18.0/conf/nginx.conf:97
+2020/07/07 12:03:56 [notice] 9832#9836: signal process started
+2020/07/07 12:03:56 [error] 9832#9836: OpenEvent("Global\ngx_reload_13952") failed (2: The system cannot find the file specified)
+2020/07/07 12:04:09 [notice] 9904#9908: signal process started
+2020/07/07 12:04:09 [error] 9904#9908: OpenEvent("Global\ngx_reload_13952") failed (2: The system cannot find the file specified)
+2020/07/07 12:04:22 [notice] 10008#10012: signal process started
+2020/07/07 12:04:22 [error] 10008#10012: OpenEvent("Global\ngx_quit_13952") failed (2: The system cannot find the file specified)
+2020/07/07 12:04:47 [error] 10088#10132: *1 "E:\webcode\e-book-resouce/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: resouce, request: "GET / HTTP/1.1", host: "localhost:9000"
+2020/07/07 12:04:48 [error] 10088#10132: *1 CreateFile() "E:\webcode\e-book-resouce/favicon.ico" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: resouce, request: "GET /favicon.ico HTTP/1.1", host: "localhost:9000", referrer: "http://localhost:9000/"
+2020/07/07 12:05:37 [notice] 9556#9568: signal process started
+2020/07/07 14:27:28 [error] 9616#7124: *7 CreateFile() "E:\webcode\e-book\e-book-resouce/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: resouce, request: "GET /favicon.ico HTTP/1.1", host: "localhost:9000", referrer: "http://localhost:9000/"
