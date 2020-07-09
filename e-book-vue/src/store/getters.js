@@ -1,4 +1,4 @@
 const getters = {
-  test: state => state.book.test
+  fileName: state => state.book.fileName
 }
 export default getters
