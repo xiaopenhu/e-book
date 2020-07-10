@@ -16,6 +16,7 @@ export default {
       const url = 'http://localhost:9000/epub/' + this.fileName + '.epub'
       this.book = new Epub(url)
       this.rendition = this.book.renderTo('read', {
+        methods: 'default',
         width: innerWidth,
         height: innerHeight
       })

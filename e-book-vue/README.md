@@ -74,3 +74,16 @@ http {
     }
 }
 ```
+## 访问动态路由即可查看电子书
+```
+http://localhost:8080/#/ebook/LifeSciences|2017_Book_ExecutingMagicInTheModernEra
+```
+epubjs官网示例得到method是错误的，应该是methods
+```
+// 正确写法
+this.rendition = this.book.renderTo('read', {
+    methods: 'default',
+    width: innerWidth,
+    height: innerHeight
+})
+```
