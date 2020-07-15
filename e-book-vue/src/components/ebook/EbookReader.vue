@@ -12,17 +12,47 @@ export default {
     ...mapGetters(['fileName'])
   },
   methods: {
+    prevPage: function () {
+      if (this.rendition) {
+        this.rendition.prev()
+      }
+    },
+    nextPage: function () {
+      if (this.rendition) {
+        this.rendition.next()
+      }
+    },
+    toggleTitleAndMenu: function () {},
     initEpub: function () {
       const url = 'http://localhost:9000/epub/' + this.fileName + '.epub'
       this.book = new Epub(url)
       this.rendition = this.book.renderTo('read', {
+        // 原生epubjs分页配置
+        // flow: 'paginated',
+        // manager: 'continuous',
+        // snap: true,
+        // 原生epubjs分页配置
         methods: 'default',
         width: innerWidth,
         height: innerHeight
       })
       this.rendition.display()
-      console.log(this.book)
-      console.log(this.rendition)
+      this.rendition.on('touchstart', event => {
+        this.touchStartX = event.changedTouches[0].clientX
+        this.touchStartTime = event.timeStamp
+      })
+      this.rendition.on('touchend', event => {
+        const offsetX = event.changedTouches[0].clientX - this.touchStartX
+        const time = event.timeStamp - this.touchStartTime
+        if (time < 500 && offsetX > 40) {
+          this.prevPage()
+        } else if (time < 500 && offsetX < -40) {
+          this.nextPage()
+        } else {
+          this.toggleTitleAndMenu()
+        }
+        event.stopPropagation()
+      }, false)
     }
   },
   mounted () {
