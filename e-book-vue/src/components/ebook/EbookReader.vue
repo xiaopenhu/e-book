@@ -8,8 +8,9 @@ import { mapGetters } from 'vuex'
 import Epub from 'epubjs'
 global.ePub = Epub
 export default {
+  name: 'EbookReader',
   computed: {
-    ...mapGetters(['fileName'])
+    ...mapGetters(['fileName', 'menuVisible'])
   },
   methods: {
     prevPage: function () {
@@ -22,7 +23,9 @@ export default {
         this.rendition.next()
       }
     },
-    toggleTitleAndMenu: function () {},
+    toggleTitleAndMenu: function () {
+      this.$store.dispatch('setMenuVisible', !this.menuVisible)
+    },
     initEpub: function () {
       const url = 'http://localhost:9000/epub/' + this.fileName + '.epub'
       this.book = new Epub(url)
@@ -56,6 +59,7 @@ export default {
     }
   },
   mounted () {
+    console.log(this.$route.params.fileName)
     this.$store.dispatch('setFileName', this.$route.params.fileName.split('|').join('/')).then(() => {
       this.initEpub()
     })
